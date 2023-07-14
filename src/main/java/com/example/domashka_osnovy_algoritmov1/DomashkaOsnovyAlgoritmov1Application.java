@@ -10,7 +10,9 @@ import java.util.List;
 public class DomashkaOsnovyAlgoritmov1Application {
 
     public static void main(String[] args) {
+
         SpringApplication.run(DomashkaOsnovyAlgoritmov1Application.class, args);
+
     }
 
 

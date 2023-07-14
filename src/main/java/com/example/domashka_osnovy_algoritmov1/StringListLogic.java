@@ -7,7 +7,7 @@ import java.util.List;
 
 public class StringListLogic implements StringList    {
     private int size = 10;
-    private final String[] stringList = new String[size];
+    private String[] stringList = new String[12];
 
 
     @Override
@@ -21,7 +21,7 @@ public class StringListLogic implements StringList    {
     @Override
     public String add(int index, String item) {
         validate(item);
-        valideteIndex(index);
+        validateIndex(index);
         sizeValidate();
         if(index==size) {
             stringList[size++] = item;
@@ -36,7 +36,7 @@ public class StringListLogic implements StringList    {
 
     @Override
     public String set(int index, String item) {
-        valideteIndex(index);
+        validateIndex(index);
         validate(item);
         stringList[index]=item;
         return item;
@@ -62,7 +62,7 @@ public class StringListLogic implements StringList    {
 
     @Override
     public String remove(int index) {
-        valideteIndex(index);
+        validateIndex(index);
         if (index==-1){
             throw new ElementNotFoundException();
         }
@@ -108,7 +108,7 @@ public class StringListLogic implements StringList    {
 
     @Override
     public String get(int index) {
-        valideteIndex(index);
+        validateIndex(index);
         return stringList[index];
     }
 
@@ -152,10 +152,11 @@ public class StringListLogic implements StringList    {
             throw new StorageIsFullException();
         }
     }
-    private void valideteIndex(int index){
+    private void validateIndex(int index){
         if(index<0||index>size){
             throw new InvalidIndexExseption();
         }
     }
+
 }
 
